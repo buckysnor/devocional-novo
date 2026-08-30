@@ -8,9 +8,9 @@ export const product = {
 
   // Preços confirmados (unidade)
   price: {
-    from: 'R$ 119,90',
-    now: 'R$ 79,90',
-    installments: '6x de R$ 13,31 sem juros',
+    from: 'R$ 59,90',
+    now: 'R$ 29,90',
+    installments: 'em até 6x no cartão',
   },
 
   // URL de checkout confirmada
