@@ -40,11 +40,13 @@ export const product = {
     },
   },
 
-  // Vídeos UGC reais — 3 URLs MP4 externas. TODO: substituir.
+  // Vídeos UGC reais hospedados no Shopify CDN.
   videos: {
-    ugc1: 'UGC_VIDEO_1', // TODO
-    ugc2: 'UGC_VIDEO_2', // TODO
-    ugc3: 'UGC_VIDEO_3', // TODO
+    ugc1: 'https://cdn.shopify.com/videos/c/o/v/887e509971a942d38e1b8034ce2a68b9.mp4',
+    ugc2: 'https://cdn.shopify.com/videos/c/o/v/f15e637cbf0b4949b2677b12f9fc7aaf.mp4',
+    ugc3: 'https://cdn.shopify.com/videos/c/o/v/209c9bf8721b4d5f97ad7c1c6accdb1d.mp4',
+    ugc4: 'https://cdn.shopify.com/videos/c/o/v/47e10a7e552045a3be9819da24859d88.mp4',
+    ugc5: 'https://cdn.shopify.com/videos/c/o/v/cdf7b8733eb14a3682de65c46e7faad2.mp4',
   },
 
   images: {
