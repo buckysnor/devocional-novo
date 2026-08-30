@@ -4,7 +4,13 @@ import { useRef, useState } from 'react'
 import { Play, Pause, Volume2, VolumeX, Film } from 'lucide-react'
 import { product } from '@/lib/product'
 
-const sources = [product.videos.ugc1, product.videos.ugc2, product.videos.ugc3]
+const sources = [
+  product.videos.ugc1,
+  product.videos.ugc2,
+  product.videos.ugc3,
+  product.videos.ugc4,
+  product.videos.ugc5,
+]
 
 function isRealUrl(src: string) {
   return /^https?:\/\//.test(src)
@@ -13,11 +19,9 @@ function isRealUrl(src: string) {
 export function VideoCarousel() {
   const refs = useRef<(HTMLVideoElement | null)[]>([])
   const [playing, setPlaying] = useState<number | null>(null)
-  const [muted, setMuted] = useState<Record<number, boolean>>({
-    0: true,
-    1: true,
-    2: true,
-  })
+  const [muted, setMuted] = useState<Record<number, boolean>>(() =>
+    Object.fromEntries(sources.map((_, i) => [i, true]))
+  )
 
   const handlePlay = (i: number) => {
     const video = refs.current[i]
@@ -56,11 +60,11 @@ export function VideoCarousel() {
           recebeu.
         </p>
 
-        <div className="no-scrollbar snap-x-mandatory mt-10 flex gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:overflow-visible">
+        <div className="no-scrollbar snap-x-mandatory mt-10 flex gap-4 overflow-x-auto pb-2">
           {sources.map((src, i) => (
             <div
               key={i}
-              className="snap-start relative aspect-[9/16] w-[78%] shrink-0 overflow-hidden rounded-2xl border border-border bg-blush sm:w-[46%] md:w-full"
+              className="snap-start relative aspect-[9/16] w-[78%] shrink-0 overflow-hidden rounded-2xl border border-border bg-blush sm:w-[46%] md:w-[31%]"
             >
               {isRealUrl(src) ? (
                 <>
@@ -104,7 +108,6 @@ export function VideoCarousel() {
                   </div>
                 </>
               ) : (
-                // Placeholder até termos as URLs reais dos 3 vídeos (UGC_VIDEO_1..3)
                 <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-center text-dusty-rose">
                   <Film className="h-8 w-8" strokeWidth={1.5} />
                   <span className="px-4 text-xs font-medium uppercase tracking-wide text-muted-foreground">
