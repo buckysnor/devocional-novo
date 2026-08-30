@@ -1,0 +1,119 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* brand tokens */
+  --color-cream: var(--cream);
+  --color-blush: var(--blush);
+  --color-soft-pink: var(--soft-pink);
+  --color-dusty-rose: var(--dusty-rose);
+  --color-wine: var(--wine);
+  --color-gold: var(--gold);
+  --color-olive: var(--olive);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
+:root {
+  color-scheme: light;
+
+  --background: #fbf8f5;
+  --foreground: #332725;
+
+  --card: #ffffff;
+  --card-foreground: #332725;
+  --popover: #ffffff;
+  --popover-foreground: #332725;
+
+  --primary: #721c25;
+  --primary-foreground: #fbf8f5;
+
+  --secondary: #f8efed;
+  --secondary-foreground: #332725;
+
+  --muted: #f8efed;
+  --muted-foreground: #756562;
+
+  --accent: #c79a20;
+  --accent-foreground: #ffffff;
+
+  --border: #ecdcd8;
+  --input: #ecdcd8;
+  --ring: #c98f9f;
+
+  /* brand palette */
+  --cream: #fbf8f5;
+  --blush: #fbedef;
+  --soft-pink: #e8c1cb;
+  --dusty-rose: #c98f9f;
+  --wine: #721c25;
+  --gold: #c79a20;
+  --olive: #4b5532;
+
+  --radius: 0.625rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-serif), Georgia, serif;
+  }
+  .font-sans {
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
+  /* subtle scrollbar-free horizontal carousels */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .snap-x-mandatory {
+    scroll-snap-type: x mandatory;
+  }
+  .snap-start {
+    scroll-snap-align: start;
+  }
+}
