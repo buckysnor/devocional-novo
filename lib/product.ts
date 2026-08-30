@@ -13,8 +13,8 @@ export const product = {
     installments: '6x de R$ 13,31 sem juros',
   },
 
-  // URL de checkout da unidade — TODO: substituir pela URL real
-  buyUrl: '#comprar', // TODO: BUY_URL (checkout da unidade)
+  // URL de checkout confirmada
+  buyUrl: 'https://holdrey.pay.yampi.com.br/r/RMQHSS8ZDA',
 
   // Especificações confirmadas do livro físico
   specs: {
