@@ -26,12 +26,12 @@ export const product = {
     isbn: '9786583195050',
   },
 
-  // Kits — preços NÃO confirmados. Placeholders explícitos.
+  // Kits
   kits: {
     kit2: {
-      price: 'KIT_2_PRICE', // TODO
-      installments: 'KIT_2_INSTALLMENTS', // TODO
-      buyUrl: '#comprar', // TODO: KIT_2_BUY_URL
+      price: 'R$ 69,90',
+      installments: '',
+      buyUrl: '#comprar', // TODO: confirmar URL específica do kit devocional + caneca
     },
     kit3: {
       price: 'KIT_3_PRICE', // TODO
@@ -52,6 +52,7 @@ export const product = {
   images: {
     cover: '/livro-capa.jpg',
     duo: '/livro-duplo.png',
+    kitMug: '/kit-livro-caneca.webp',
     interior: '/livro-interior.png',
     lifestyle: '/lifestyle-manha.png',
   },
