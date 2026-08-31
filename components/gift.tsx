@@ -18,8 +18,8 @@ const options = [
     highlight: false,
   },
   {
-    title: 'Kit 2 Unidades',
-    subtitle: 'Um para você, outro para presentear',
+    title: 'Kit Devocional + Caneca',
+    subtitle: 'Devocional 365 dias + caneca',
     price: displayValue(product.kits.kit2.price),
     installments: displayValue(product.kits.kit2.installments),
     href: product.kits.kit2.buyUrl,
@@ -43,23 +43,23 @@ export function Gift() {
           <div className="order-2 md:order-1">
             <span className="inline-flex items-center gap-2 rounded-full bg-blush px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-wine">
               <GiftIcon className="h-4 w-4" strokeWidth={1.75} />
-              Presenteie quem você ama
+              Kit Mulheres com Deus
             </span>
             <h2 className="mt-4 text-balance font-serif text-3xl font-medium leading-tight text-foreground sm:text-4xl">
               Um presente que renova a fé todos os dias.
             </h2>
             <p className="mt-4 max-w-md text-pretty text-[15px] leading-relaxed text-muted-foreground md:text-base">
-              Leve mais de um exemplar e transforme o devocional em um presente
-              especial para uma mãe, irmã, amiga ou para o seu grupo.
+              O Kit Mulheres com Deus reúne o devocional de 365 dias e uma caneca
+              especial para acompanhar seu momento diário de fé.
             </p>
           </div>
 
           <div className="order-1 flex justify-center md:order-2">
             <Image
-              src={product.images.duo || '/placeholder.svg'}
-              alt="Duas unidades do Devocional Mulheres com Deus"
+              src={product.images.kitMug || '/placeholder.svg'}
+              alt="Kit Devocional Mulheres com Deus com caneca"
               width={1200}
-              height={1200}
+              height={800}
               className="w-full max-w-md drop-shadow-lg"
             />
           </div>
@@ -89,14 +89,16 @@ export function Gift() {
               <p className="mt-4 font-serif text-3xl font-semibold text-wine">
                 {opt.price}
               </p>
-              <p className="mb-6 mt-1 text-xs text-muted-foreground">
-                {opt.installments}
-              </p>
+              {opt.installments && (
+                <p className="mb-6 mt-1 text-xs text-muted-foreground">
+                  {opt.installments}
+                </p>
+              )}
               <CtaButton
                 href={opt.href}
                 variant={opt.highlight ? 'primary' : 'outline'}
                 size="md"
-                className="mt-auto w-full"
+                className={`${opt.installments ? '' : 'mt-6 '}mt-auto w-full`}
               >
                 Escolher
               </CtaButton>
