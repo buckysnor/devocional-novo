@@ -5,7 +5,7 @@ type Props = {
   href: string
   children: React.ReactNode
   className?: string
-  variant?: 'primary' | 'outline' | 'gold'
+  variant?: 'primary' | 'outline'
   size?: 'md' | 'lg'
 }
 
@@ -27,8 +27,6 @@ export function CtaButton({
           'bg-wine text-primary-foreground shadow-sm hover:bg-[#5c151c]',
         variant === 'outline' &&
           'border border-wine text-wine hover:bg-wine hover:text-primary-foreground',
-        variant === 'gold' &&
-          'bg-gold text-accent-foreground shadow-sm hover:bg-[#b3891c]',
         className,
       )}
     >
